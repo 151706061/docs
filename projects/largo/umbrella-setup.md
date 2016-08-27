@@ -1,5 +1,7 @@
 # Set up Largo-Umbrella Local Environment
 
+NOTE: If you're setting up a new umbrella repo for a project/client, see the instructions in the largo docs: [https://largo.readthedocs.io/developers/setup.html](https://largo.readthedocs.io/developers/setup.html)
+
 You're new to INN, or you've been here for a while and never set up the Largo Umbrella of sites before on your computer, or you you've been here and have it set up but you did the setup back in the Cenozoic era and avoid doing it because you forget all the details.
 
 Fret not! This guide will show you how to go from a Mac OS X system, with a baseline of what is described in our [setup docs](/staffing/onboarding/os-x-setup.md#terminal-emulator), and get to the point of:
@@ -14,7 +16,7 @@ Fret not! This guide will show you how to go from a Mac OS X system, with a base
 
 Pretty cool, right?
 
-Most of this stuff works from your command line, which you get to through the default Mac application terminal or, if you followed the setup guide, iTerm2. If you're unfamiliar with using the terminal or don't have iTerm2, be sure to go through that section in the [setup guide](/staffing/onboarding/os-x-setup.md#terminal-emulator) to get some prerequisites set up. If you have questions, be sure to ask in the INN Tech HipChat room, because the terminal can be a perplexing and idiosyncratic interface. We've all been there.
+Most of this stuff works from your command line, which you get to through the default Mac application terminal or, if you followed the setup guide, iTerm2. If you're unfamiliar with using the terminal or don't have iTerm2, be sure to go through that section in the [setup guide](/staffing/onboarding/os-x-setup.md#terminal-emulator) to get some prerequisites set up. If you have questions, be sure to ask in the [INN Tech slack channel](http://slack.inn.org/), because the terminal can be a perplexing and idiosyncratic interface. We've all been there.
 
 What's next?
 
@@ -22,7 +24,7 @@ What's next?
 
 While we use Github for hosting our open source contributions, we use Bitbucket instead for the actual production code that powers our websites. Bitbucket allows for unlimited private repositories for Non-Profits like us, and gives us finer-grained control of permissions to individual projects.
 
-If you haven't already, register a BitBucket account with your INN email address, and then tell Adam or Ryan that you need access to the [largo-umbrella project](https://bitbucket.org/projectlargo/largo-umbrella). If you're using the command-line interface to git, you'll need to generate an SSH key with `ssh-keygen` and save it to your Bitbucket profile settings as described [here](https://confluence.atlassian.com/display/BITBUCKET/Add+an+SSH+key+to+an+account).
+If you haven't already, register a BitBucket account with your INN email address, and then tell Adam that you need access to the [largo-umbrella project](https://bitbucket.org/projectlargo/largo-umbrella). If you're using the command-line interface to git, you'll need to generate an SSH key with `ssh-keygen` and save it to your Bitbucket profile settings as described [here](https://confluence.atlassian.com/display/BITBUCKET/Add+an+SSH+key+to+an+account).
 
 When you have access to the repository, you can now clone it to your local system. The address is `git@bitbucket.org:projectlargo/largo-umbrella.git` which you can clone at the command line with:
 
@@ -75,9 +77,9 @@ Make sure to have [git-ftp] (https://github.com/git-ftp/git-ftp/blob/develop/INS
 
 ## 5. Set up the secrets repository.
 
-In order to access the live website data, and to send notifications to HipChat when you do deploy, you'll need to set up the INN secrets repository.
+In order to access the live website data, you'll need to set up the INN secrets repository.
 
-1. If you don't already have access to it on Github, talk to Adam or Ryan to get access. Once you get access, clone the repository to your local system:
+1. If you don't already have access to it on Github, talk to Adam to get access. Once you get access, clone the repository to your local system:
 
 	```
 	$ git clone git@github.com:INN/secrets.git
@@ -129,10 +131,10 @@ This tells your system that whenever you use the address `http://vagrant.dev`, y
 
 ## 7. Download WordPress.
 
-We still need to get the WordPress core files downloaded to the right locations to tie all of this together. Download the latest version of WordPress (4.3.1 as of November 2015) using Fabric.
+We still need to get the WordPress core files downloaded to the right locations to tie all of this together. Download the latest version of WordPress (4.5.3 as of July 2016) using Fabric. Check for the latest version of Wordpress [here](https://wordpress.org/download/).
 
 ```
-$ fab wp.install:4.3.1
+$ fab wp.install:4.5.3
 ```
 
 ## 8. Download production database.
